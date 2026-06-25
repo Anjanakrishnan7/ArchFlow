@@ -3,7 +3,10 @@
 A full-stack construction project management platform built with the MERN stack, designed to streamline communication and workflow between construction companies, managers, staff, and clients.
 
 ## Live Demo
-🔗 Coming Soon
+🔗 [ArchFlow Live](https://arch-flow.vercel.app)
+
+## Backend API
+🔗 https://archflow-backend-ek0c.onrender.com
 
 ## Features
 
