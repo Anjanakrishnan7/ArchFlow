@@ -1,0 +1,139 @@
+/* Shared Button Styles */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: 1px solid transparent;
+    text-decoration: none;
+    gap: 0.5rem;
+    white-space: nowrap;
+    height: 2.5rem;
+    /* Consistent height */
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn:focus {
+    outline: 2px solid var(--primary-200);
+    outline-offset: 2px;
+}
+
+/* Sizes */
+.btn-sm {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    height: 2rem;
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    height: 3rem;
+}
+
+/* Variants */
+
+/* Primary - Blue */
+.btn-primary {
+    background-color: var(--primary-600);
+    color: white;
+    border-color: transparent;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--primary-700);
+    color: white;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+}
+
+/* Secondary - Light Gray */
+.btn-secondary {
+    background-color: var(--neutral-100);
+    color: var(--neutral-700);
+    border-color: var(--neutral-200);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--neutral-200);
+    color: var(--neutral-900);
+    text-decoration: none;
+}
+
+/* Success - Green */
+.btn-success {
+    background-color: var(--success);
+    color: white;
+    border-color: transparent;
+}
+
+.btn-success:hover:not(:disabled) {
+    background-color: var(--success-dark);
+    color: white;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+}
+
+/* Warning - Amber/Orange */
+.btn-warning {
+    background-color: var(--warning);
+    color: white;
+    border-color: transparent;
+}
+
+.btn-warning:hover:not(:disabled) {
+    background-color: var(--warning-dark);
+    color: white;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+}
+
+/* Danger - Red (Outline by default for actions like Delete) */
+.btn-danger {
+    background-color: white;
+    color: var(--error);
+    border-color: var(--error);
+}
+
+.btn-danger:hover:not(:disabled) {
+    background-color: var(--error-light);
+    color: var(--error-dark);
+    text-decoration: none;
+}
+
+/* Danger Solid */
+.btn-danger-solid {
+    background-color: var(--error-dark);
+    color: white;
+    border-color: transparent;
+}
+
+.btn-danger-solid:hover:not(:disabled) {
+    background-color: #7f1d1d;
+    color: white;
+    text-decoration: none;
+}
+
+/* Outline */
+.btn-outline {
+    background-color: transparent;
+    border-color: var(--neutral-300);
+    color: var(--neutral-700);
+}
+
+.btn-outline:hover:not(:disabled) {
+    background-color: var(--neutral-50);
+    border-color: var(--neutral-400);
+    color: var(--neutral-900);
+    text-decoration: none;
+}

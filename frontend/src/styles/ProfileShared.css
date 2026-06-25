@@ -1,0 +1,178 @@
+/* ProfileShared.css - Shared styles for Profile pages */
+
+.profile-edit-page {
+    background-color: transparent;
+    padding: 0;
+    overflow: hidden;
+}
+
+.profile-edit-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.edit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.edit-card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    padding: 20px 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-header {
+    border-left: 3px solid #3b82f6;
+    margin-bottom: 16px;
+    width: 100%;
+    display: block;
+    height: auto;
+    padding: 0;
+}
+
+.profile-section-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin: 0;
+    padding: 8px 0 8px 12px;
+    line-height: normal;
+    text-align: left !important;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+/* Form Styling */
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.form-input {
+    padding: 8px 10px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    color: #1f2937;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background-color: #feffff;
+}
+
+.form-input:disabled {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    border-color: #e5e7eb;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.form-input::placeholder {
+    color: #9ca3af;
+}
+
+.save-btn {
+    margin-top: 10px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.save-btn:hover {
+    background-color: #2563eb;
+}
+
+.save-btn:disabled {
+    background-color: #93c5fd;
+    cursor: not-allowed;
+}
+
+/* Image Upload Specifics */
+.profile-image-upload-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.profile-image-wrapper-small {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.profile-image-small {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image-placeholder-small {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #9ca3af;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image-edit-btn-small {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #3b82f6;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    z-index: 20;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .edit-grid {
+        grid-template-columns: 1fr;
+    }
+}

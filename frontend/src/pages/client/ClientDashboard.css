@@ -1,0 +1,402 @@
+/* Client Dashboard - Manager Style Replication */
+
+:root {
+    /* Manager Theme Colors but adapted for Client Orange Accent */
+    --bg: #f4f6f9;
+    /* Same as manager */
+    --card: #ffffff;
+    --muted: #7b8794;
+    --client-accent: #d87c00;
+    /* Keeping Client Orange as primary accent */
+    --client-accent-2: #e67e22;
+    /* Secondary orange */
+    --shadow-soft: 0 6px 18px rgba(35, 47, 63, 0.08);
+    --border-subtle: rgba(36, 49, 58, 0.04);
+    --radius: 10px;
+    /* Matching Manager Radius */
+    --font-main: 'Inter', sans-serif;
+    --text-dark: #1a202c;
+}
+
+.client-dashboard-container {
+    padding: 24px;
+    background-color: var(--bg);
+    min-height: 100vh;
+    font-family: var(--font-main);
+    color: var(--text-dark);
+}
+
+/* Header */
+.client-welcome-section {
+    margin-bottom: 32px;
+}
+
+.client-welcome-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.dashboard-title-role .client-role-accent {
+    color: var(--client-accent) !important;
+}
+
+.dashboard-title-role .dashboard-text {
+    color: #1a1a1a !important;
+    /* Black for Dashboard text */
+}
+
+.client-name-highlight {
+    color: var(--client-accent);
+}
+
+.client-welcome-subtitle {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+/* 12-Column Grid to match Manager */
+.client-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+/* Stat Cards (Metrics Row) */
+.client-stats-row {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.client-stat-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border-subtle);
+    /* Added border to match manager */
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    /* Let content dictate height, manager uses flex */
+    min-height: 100px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.client-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(35, 47, 63, 0.12);
+}
+
+/* The gradient bar on the left - Manager style */
+.client-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--client-accent), var(--client-accent-2));
+    opacity: 0.8;
+}
+
+.client-stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.client-stat-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    order: 2;
+    /* Put title below value to match manager if that's the style, but manager has value on top */
+    margin-top: 4px;
+}
+
+.client-stat-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-dark);
+    order: 1;
+}
+
+/* Chart Card & Updates Card */
+.client-content-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 24px;
+    border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.client-content-card:hover {
+    transform: translateY(-2px);
+}
+
+/* Grid placement */
+.client-card-chart {
+    grid-column: span 8;
+    /* 2/3 width */
+}
+
+.client-card-summary {
+    grid-column: span 4;
+    /* 1/3 width */
+}
+
+.client-card-summary {
+    grid-column: span 4;
+    /* 1/3 width */
+}
+
+.client-card-updates {
+    grid-column: span 4;
+    /* 1/3 width */
+}
+
+.client-card-header {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+/* Chart Specifics */
+.chart-container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    position: relative;
+    width: 100%;
+}
+
+/* Timeline Styles for Updates */
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.view-all-link {
+    font-size: 13px;
+    color: var(--client-accent);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+.updates-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    padding-left: 8px;
+    /* Offset for better centering if needed */
+}
+
+.timeline-item {
+    display: flex;
+    gap: 16px;
+    position: relative;
+    padding-bottom: 24px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+/* Connecting Line */
+.timeline-item:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    /* Center of the 30px icon (roughly) */
+    top: 30px;
+    bottom: 0;
+    width: 2px;
+    background-color: #f1f5f9;
+}
+
+.timeline-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    z-index: 2;
+    border: 3px solid var(--card);
+    /* gap from line */
+    box-shadow: 0 0 0 1px #e2e8f0;
+    /* subtle border ring */
+}
+
+/* Icon Colors by Type */
+.type-document {
+    background-color: #3b82f6;
+}
+
+/* Blue */
+.type-schedule {
+    background-color: #8b5cf6;
+}
+
+/* Purple */
+.type-milestone {
+    background-color: #10b981;
+}
+
+/* Green */
+.type-payment {
+    background-color: #f59e0b;
+}
+
+/* Amber */
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4px;
+    /* Align with icon center visually */
+}
+
+.timeline-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.timeline-date {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+/* Quick Status Summary Widget Styles */
+.status-summary-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.2rem;
+    border-radius: 40px;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+    transition: all 0.2s ease;
+}
+
+.status-item:hover {
+    transform: translateX(3px);
+    background: #f1f1f1;
+}
+
+.status-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.status-count {
+    font-weight: 700;
+    color: #222;
+}
+
+/* Status Colors */
+.status-green {
+    background-color: #e9fdf0;
+    border-color: #c7f6d9;
+}
+
+.status-green .status-dot {
+    background-color: #10b981;
+}
+
+.status-green .status-label {
+    color: #0f6b32;
+}
+
+.status-blue {
+    background-color: #eff6ff;
+    border-color: #cfe0ff;
+}
+
+.status-blue .status-dot {
+    background-color: #3b82f6;
+}
+
+.status-blue .status-label {
+    color: #1e40af;
+}
+
+.status-grey {
+    background-color: #f8fafc;
+    border-color: #e2e8f0;
+}
+
+.status-grey .status-dot {
+    background-color: #94a3b8;
+}
+
+.status-grey .status-label {
+    color: #64748b;
+}
+
+.status-amber {
+    background-color: #fee2e2;
+    border-color: #fecaca;
+}
+
+.status-amber .status-dot {
+    background-color: #ef4444;
+}
+
+.status-amber .status-label {
+    color: #991b1b;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+    .client-card-chart,
+    .client-card-updates {
+        grid-column: span 12;
+        /* Full width on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .client-stats-row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,118 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Keep content at the top */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa, #e0e3ec); /* Match register page background */
+  padding: 60px 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+.login-subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px; /* Match register form gap */
+}
+
+.login-select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 100%;
+  background-color: #f9fafb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-select:focus {
+  outline: none;
+  border-color: #d87c00;
+  box-shadow: 0 0 0 3px rgba(216, 124, 0, 0.25);
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 18px 14px 50px; /* Match register inputs */
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 18px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 15px; /* Align with icon */
+  background: none;
+  border: none;
+  font-size: 1.2rem; /* Match register form */
+  cursor: pointer;
+  color: #6a6a8a; /* Match register form */
+  padding: 0;
+}
+
+.login-btn {
+  width: 100%;
+  background: #d87c00;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #b86b00;
+  transform: translateY(-2px);
+}
+
+.login-footer-text {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.login-footer-text a {
+  color: #d87c00;
+  font-weight: 600;
+}

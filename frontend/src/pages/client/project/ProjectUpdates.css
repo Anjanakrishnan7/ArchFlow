@@ -1,0 +1,285 @@
+/* Inherit base modal styles matches ProjectPaymentsModal.css */
+.project-updates-modal {
+    max-width: 900px !important;
+    width: 90%;
+    height: 85vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0 !important;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.project-updates-modal .modal-header {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left h2 {
+    margin: 0;
+    color: #1e293b;
+    font-size: 1.3rem;
+}
+
+.project-subtitle {
+    margin: 4px 0 0 0;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.project-updates-modal .modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem 2rem;
+    background-color: #f8fafc;
+}
+
+/* Custom Scrollbar to match */
+.project-updates-modal .modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.project-updates-modal .modal-body::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.project-updates-modal .modal-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.project-updates-modal .modal-body::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Filter Moved to Header */
+.updates-filter-select {
+    padding: 0.4rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: #374151;
+    background-color: #f9fafb;
+    cursor: pointer;
+}
+
+/* Timeline / List */
+.updates-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Update Card */
+.update-row {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 24px;
+    margin-bottom: 15px;
+}
+
+
+.left-content {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right-content {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5px;
+}
+
+.right-content .files-title {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.update-files-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.update-file-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.update-file-link:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    color: #1e293b;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+
+@media(max-width: 768px) {
+    .update-row {
+        flex-direction: column;
+    }
+
+    .left-content,
+    .right-content {
+        width: 100%;
+    }
+
+    .update-header {
+        text-align: left;
+    }
+}
+
+
+.update-header {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.update-type-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Badge Colors */
+.badge-site-visit {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.badge-work-progress {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.badge-documents {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-design {
+    background: #f3e8ff;
+    color: #6b21a8;
+}
+
+.badge-material-check {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-general {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+
+
+
+
+
+
+.update-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.update-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #374151;
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+/* Feedback Textarea */
+.feedback-container {
+    margin-top: 0.5rem;
+}
+
+.feedback-textarea {
+    width: 60%;
+    /* Reduced width as requested */
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #4b5563;
+    background: #fcfcfc;
+    resize: vertical;
+    min-height: 60px;
+    font-family: inherit;
+}
+
+.feedback-textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: #fff;
+}
+
+
+/* Card OK Button */
+.card-ok-btn {
+    padding: 0.4rem 1.5rem;
+    background-color: #3b82f6;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.card-ok-btn:hover {
+    background-color: #2563eb;
+}
+
+.card-ok-btn:disabled {
+    background-color: #94a3b8;
+    cursor: default;
+    color: #e2e8f0;
+}

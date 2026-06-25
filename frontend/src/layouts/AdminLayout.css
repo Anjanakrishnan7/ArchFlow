@@ -1,0 +1,198 @@
+/* AdminLayout.css - Admin Layout Structure & Sidebar Styles */
+
+/* Main Layout Container */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--neutral-50);
+}
+
+/* Sidebar Styles */
+.admin-layout .sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #112235;
+  color: #fff;
+  overflow-y: auto;
+  z-index: 1000;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.admin-layout .sidebar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  margin: 0;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  letter-spacing: 0.5px;
+}
+
+.admin-layout .sidebar-links {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+
+/* Main Content Area */
+.admin-layout .main-content {
+  margin-left: 280px;
+  flex: 1;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: var(--neutral-50);
+}
+
+/* Sidebar Color Variables */
+:root {
+  --sidebar-text: rgba(255, 255, 255, 0.9);
+  --sidebar-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-active-bg: rgba(255, 255, 255, 0.15);
+  --primary-color: #fff;
+}
+
+/* Logout Link Styling */
+.sidebar-links .logout-link {
+  color: #b91c1c !important;
+  margin-top: auto;
+}
+
+.sidebar-links .logout-link:hover {
+  background-color: rgba(185, 28, 28, 0.1) !important;
+  color: #991b1b !important;
+  border-left-color: #991b1b !important;
+}
+
+.sidebar-links .logout-link .icon {
+  color: inherit;
+}
+
+.sidebar-link-spacer {
+  margin-top: 2rem;
+}
+
+/* AdminLayout.css - Custom styles for admin sidebar with collapsible sections */
+
+/* Menu header for collapsible sections */
+.sidebar-links .sidebar-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.75rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--sidebar-text);
+  border-left: 4px solid transparent;
+  background: transparent;
+  border: none;
+  border-left: 4px solid transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-left-color 0.25s ease;
+}
+
+.sidebar-links .sidebar-menu-header:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+}
+
+.sidebar-links .sidebar-menu-header .icon {
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}
+
+.sidebar-links .sidebar-menu-header .expand-icon {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-links .sidebar-menu-header.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+/* Submenu container */
+.sidebar-links .sidebar-submenu {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* Sub-links (items within collapsible sections) */
+.sidebar-links .sidebar-sublink {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1.75rem 0.75rem 3.5rem;
+  font-size: 0.9rem;
+  color: var(--sidebar-text);
+  background: transparent;
+  border: none;
+  border-left: 2px solid transparent;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-left-color 0.2s ease;
+}
+
+.sidebar-links .sidebar-sublink:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+}
+
+.sidebar-links .sidebar-sublink.active {
+  background-color: var(--sidebar-active-bg);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Regular sidebar links (non-collapsible items) */
+.sidebar-links .sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.75rem;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--sidebar-text);
+  border-left: 4px solid transparent;
+  background: transparent;
+  border: none;
+  border-left: 4px solid transparent;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-left-color 0.25s ease;
+}
+
+.sidebar-links .sidebar-link:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+}
+
+.sidebar-links .sidebar-link.active {
+  background-color: var(--sidebar-active-bg);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+}
+
+.sidebar-links .sidebar-link .icon {
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+}

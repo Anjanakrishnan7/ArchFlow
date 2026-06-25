@@ -1,0 +1,124 @@
+.meetings-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.meetings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.meeting-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.meeting-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.meeting-date-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    border-radius: 12px;
+    min-width: 80px;
+    height: 80px;
+    color: #1e293b;
+}
+
+.meeting-date-box .day {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.meeting-date-box .month {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #64748b;
+}
+
+.meeting-content {
+    flex: 1;
+}
+
+.meeting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.meeting-header h4 {
+    font-size: 1.125rem;
+    color: #1e293b;
+    margin: 0;
+}
+
+.meeting-time {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.meeting-details {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.meeting-agenda {
+    font-size: 0.9rem;
+    color: #334155;
+    margin-bottom: 8px;
+    padding: 8px;
+    background: #f8fafc;
+    border-radius: 6px;
+    border-left: 3px solid #3b82f6;
+}
+
+.meeting-notes {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.multi-select {
+    height: 120px;
+    padding: 8px;
+}
+
+.form-help {
+    display: block;
+    margin-top: 4px;
+    color: #94a3b8;
+    font-size: 0.75rem;
+}

@@ -1,0 +1,102 @@
+/* Shared Card Styles - Scoped to Admin Section */
+.admin-section .card {
+    background-color: white;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--neutral-200);
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-5);
+    transition: all var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ensure cards take full height in grid */
+}
+
+.admin-section .card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--neutral-300);
+}
+
+.admin-section .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Align to top in case of multiline titles */
+    margin-bottom: var(--spacing-4);
+    gap: var(--spacing-2);
+}
+
+.admin-section .card-title,
+.admin-section .card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.admin-section .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2);
+}
+
+.admin-section .card-body p {
+    margin: 0;
+    color: var(--neutral-600);
+    font-size: 0.875rem;
+}
+
+.admin-section .card-body strong {
+    color: var(--neutral-800);
+    font-weight: 500;
+}
+
+.admin-section .card-footer {
+    margin-top: var(--spacing-4);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--neutral-100);
+    display: flex;
+    gap: var(--spacing-2);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Badge Styles (often used in cards) */
+.admin-section .badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.125rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1rem;
+    white-space: nowrap;
+}
+
+.admin-section .badge-success {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.admin-section .badge-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.admin-section .badge-danger {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.admin-section .badge-info {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.admin-section .badge-secondary {
+    background-color: #f3f4f6;
+    color: #374151;
+}

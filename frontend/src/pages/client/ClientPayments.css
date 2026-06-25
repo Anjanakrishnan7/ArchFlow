@@ -1,0 +1,166 @@
+.client-payments-container {
+    padding: 2.5rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #718096;
+    margin-bottom: 2rem;
+}
+
+.payments-table-wrapper {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.modern-payments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.modern-payments-table th {
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #4a5568;
+    background: #f7fafc;
+    border-bottom: 2px solid #edf2f7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.modern-payments-table td {
+    padding: 1.25rem 1rem;
+    font-size: 0.95rem;
+    color: #2d3748;
+    border-bottom: 1px solid #edf2f7;
+}
+
+
+
+.amount-cell {
+    font-weight: 700;
+    color: #2b6cb0;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-requested {
+    background: #ebf8ff;
+    color: #3182ce;
+}
+
+.status-paid {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-approved {
+    background: #f0fff4;
+    color: #38a169;
+}
+
+.status-overdue,
+.status-rejected {
+    background: #fff5f5;
+    color: #e53e3e;
+}
+
+.btn-pay-now {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #3182ce;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+.btn-pay-now:hover {
+    background: #2b6cb0;
+}
+
+.btn-view-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: #edf2f7;
+    color: #718096;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: not-allowed;
+    width: 100%;
+}
+
+.completed-action-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-receipt-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #3182ce;
+    background: #ebf8ff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    border: 1px solid #bee3f8;
+    text-align: center;
+    width: 100%;
+}
+
+.view-receipt-btn:hover {
+    background: #bee3f8;
+    color: #2c5282;
+}
+
+.empty-payments-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #a0aec0;
+}
+
+.empty-icon {
+    margin-bottom: 1.5rem;
+    opacity: 0.3;
+}
+
+.empty-payments-state h3 {
+    color: #4a5568;
+    margin-bottom: 0.5rem;
+}

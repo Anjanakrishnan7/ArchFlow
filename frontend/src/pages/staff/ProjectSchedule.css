@@ -1,0 +1,212 @@
+/* ProjectSchedule.css */
+
+.project-schedule-page {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Project Card */
+.project-section-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* Soft premium shadow */
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+
+.project-section-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Project Details Header */
+.project-details-header {
+    padding: 24px 30px;
+    border-bottom: 1px solid #f3f4f6;
+    background: linear-gradient(to right, #ffffff, #fafafa);
+}
+
+.project-title-block h2 {
+    font-size: 1.5rem;
+    color: #111827;
+    margin: 0 0 12px 0;
+    font-weight: 600;
+}
+
+.project-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.meta-item.budget {
+    color: #059669;
+    /* Green for budget */
+    font-weight: 500;
+}
+
+/* Schedule Table */
+.schedule-table-container {
+    padding: 0 30px 30px 30px;
+}
+
+.schedule-table-container h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #374151;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 10px;
+}
+
+.schedule-table th {
+    text-align: left;
+    padding: 16px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    font-weight: 600;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.schedule-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #374151;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.schedule-table tr:last-child td {
+    border-bottom: none;
+}
+
+.schedule-table tr:hover td {
+    background-color: #f9fafb;
+}
+
+.task-title {
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.date-col {
+    color: #4b5563;
+}
+
+.days-col {
+    width: 140px;
+}
+
+.days-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #eff6ff;
+    color: #3b82f6;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-badge {
+    white-space: nowrap;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.progress-text {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.95rem;
+}
+
+.btn-view-details {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    color: #475569;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-view-details:hover {
+    background: #0ea5e9;
+    color: white;
+    border-color: #0ea5e9;
+}
+
+/* New View Button Style (Action-like) */
+.btn-view-action-like {
+    background: #f3f4f6;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #4b5563;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-view-action-like:hover {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-details-header {
+        padding: 20px;
+    }
+
+    .schedule-table-container {
+        padding: 0 15px 15px 15px;
+        overflow-x: auto;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+        padding: 12px 10px;
+    }
+}

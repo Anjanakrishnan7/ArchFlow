@@ -1,0 +1,41 @@
+.work-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.work-tab-nav {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+.work-tab-button {
+    padding: 10px 20px;
+    border: none;
+    background: white;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.work-tab-button:hover {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.work-tab-button.active {
+    background: #3b82f6;
+    color: white;
+}
+
+.work-tab-content {
+    min-height: 400px;
+}

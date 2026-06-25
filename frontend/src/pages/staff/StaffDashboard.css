@@ -1,0 +1,254 @@
+/* ----------------------------------------
+   STAFF DASHBOARD — PROFESSIONAL STYLING
+   Modern + Classic + Clean UI
+----------------------------------------- */
+
+.staff-dashboard-container {
+    padding: 2rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: #2b2b2b;
+    background-color: #fafafa;
+    min-height: 100vh;
+    letter-spacing: 0.2px;
+}
+
+/* ----------------------------------------
+   1. HEADER AREA
+----------------------------------------- */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.2rem;
+}
+
+.staff-welcome-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dashboard-title-role {
+    display: block;
+}
+
+.dashboard-title-role .staff-role-accent {
+    color: #4361ee !important;
+    /* Professional Blue for Staff */
+}
+
+.dashboard-title-role .dashboard-text {
+    color: #1a1a1a !important;
+    /* Black for Dashboard text */
+}
+
+.staff-name-highlight {
+    color: #d87c00;
+}
+
+/* ----------------------------------------
+   2. METRICS CARDS
+----------------------------------------- */
+
+.metrics-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.7rem;
+    margin-bottom: 2.5rem;
+}
+
+.metric-card {
+    background: #ffffff;
+    padding: 1.7rem;
+    border-radius: 14px;
+    border: 1px solid #ececec;
+    box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.metric-title {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* ----------------------------------------
+   3. LOWER SECTION — PIE CHART + SUMMARY
+----------------------------------------- */
+
+.dashboard-lower-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.7rem;
+}
+
+.lower-card {
+    background: #ffffff;
+    padding: 1.8rem;
+    border-radius: 14px;
+    border: 1px solid #ececec;
+    box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+}
+
+.lower-card:hover {
+    box-shadow: 0px 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.3px;
+}
+
+/* PIE CHART */
+.pie-chart-container {
+    width: 65%;
+    max-width: 320px;
+    margin-top: 0.5rem;
+}
+
+/* ----------------------------------------
+   QUICK STATUS SUMMARY
+----------------------------------------- */
+
+.status-summary-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.2rem;
+    border-radius: 40px;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+    transition: all 0.2s ease;
+}
+
+.status-item:hover {
+    transform: translateX(3px);
+    background: #f1f1f1;
+}
+
+/* Shared status pill styling */
+.status-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.status-count {
+    font-weight: 700;
+    color: #222;
+}
+
+/* STATUS COLOR THEMES */
+.status-blue {
+    background-color: #eff6ff;
+    border-color: #cfe0ff;
+}
+
+.status-blue .status-dot {
+    background-color: #3b82f6;
+}
+
+.status-blue .status-label {
+    color: #1e40af;
+}
+
+.status-grey {
+    background-color: #f3f4f6;
+    border-color: #e5e7eb;
+}
+
+.status-grey .status-dot {
+    background-color: #9ca3af;
+}
+
+.status-grey .status-label {
+    color: #4b5563;
+}
+
+.status-green {
+    background-color: #e9fdf0;
+    border-color: #c7f6d9;
+}
+
+.status-green .status-dot {
+    background-color: #22c55e;
+}
+
+.status-green .status-label {
+    color: #0f6b32;
+}
+
+/* ----------------------------------------
+   RESPONSIVE ADJUSTMENTS
+----------------------------------------- */
+
+@media (max-width: 900px) {
+    .metrics-section {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-lower-section {
+        grid-template-columns: 1fr;
+    }
+
+    .pie-chart-container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-left h1 {
+        font-size: 1.4rem;
+    }
+
+    .metric-value {
+        font-size: 1.8rem;
+    }
+}
+
+.dashboard-loading,
+.dashboard-error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 1.2rem;
+    color: #666;
+    background-color: #fafafa;
+}
+
+.dashboard-error {
+    color: #ef4444;
+}

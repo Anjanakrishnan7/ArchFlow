@@ -1,0 +1,232 @@
+:root {
+  --register-primary: #d87c00;
+  /* Theme primary */
+  --register-primary-dark: #b86b00;
+  /* Darker shade */
+  --register-bg: linear-gradient(135deg, #f5f7fa, #e0e3ec);
+  --register-card-bg: #ffffff;
+  --register-shadow: 0px 15px 40px rgba(0, 0, 0, 0.1);
+  --register-border: #d1d5db;
+  --register-error-bg: #ffebee;
+  --register-text-dark: #1f1f1f;
+  --register-text-light: #666;
+  --register-error-text-color: #c62828;
+}
+
+/* ========= WRAPPER ========= */
+.dynamic-register-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: var(--register-bg);
+  padding: 60px 20px;
+  box-sizing: border-box;
+}
+
+/* ========= CARD ========= */
+.dynamic-register-card {
+  width: 100%;
+  max-width: 500px;
+  background: var(--register-card-bg);
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: var(--register-shadow);
+}
+
+/* ========= HEADER ========= */
+.register-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.register-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--register-text-dark);
+  margin-bottom: 10px;
+}
+
+.register-subtitle {
+  color: var(--register-text-light);
+  font-size: 1rem;
+}
+
+/* ========= ERROR BOX ========= */
+.register-error-box {
+  background: var(--register-error-bg);
+  color: var(--register-error-text-color);
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid var(--register-error-text-color);
+}
+
+/* ========= FORM ========= */
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
+  border: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.form-section legend {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--register-text-dark);
+  margin-bottom: 15px;
+  padding: 0;
+}
+
+/* ========= INPUT GROUP ========= */
+.input-group {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px 18px 14px 50px;
+  border-radius: 10px;
+  border: 1px solid var(--register-border);
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  background-color: #f9fafb;
+}
+
+/* Activate correct padding when icon is present */
+.input-group:has(.input-icon) select,
+.input-group:has(.input-icon) input {
+  padding-left: 50px;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--register-primary);
+  box-shadow: 0 0 0 3px rgba(216, 124, 0, 0.25);
+  background-color: #fff;
+}
+
+/* ========= ICONS ========= */
+.input-icon {
+  position: absolute;
+  left: 18px;
+  top: 15px;
+  color: var(--register-text-light);
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+/* ========= PASSWORD TOGGLE ========= */
+.toggle-password {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--register-text-light);
+  font-size: 1.2rem;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-password:hover {
+  color: var(--register-primary);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.toggle-password:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* ========= ERROR TEXT UNDER FIELDS ========= */
+.input-error-text {
+  color: var(--register-error-text-color);
+  font-size: 0.85rem;
+  position: absolute;
+  bottom: -20px;
+  left: 5px;
+}
+
+/* ========= BUTTON ========= */
+.register-btn {
+  width: 100%;
+  background: var(--register-primary);
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+}
+
+.register-btn:hover {
+  background: var(--register-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Disabled state for loading */
+.register-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* ========= FOOTER ========= */
+.register-footer-text {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--register-text-light);
+}
+
+.register-footer-text a {
+  color: var(--register-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* ========= SCREEN READER ONLY ========= */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ========= MOBILE ========= */
+@media (max-width: 500px) {
+  .dynamic-register-wrapper {
+    padding: 30px 15px;
+  }
+
+  .dynamic-register-card {
+    padding: 30px 25px;
+  }
+}

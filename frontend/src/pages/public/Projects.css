@@ -1,0 +1,136 @@
+/* Page Layout */
+.projects-page {
+    padding: 4rem 2rem 8rem 2rem;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+
+
+/* Grid Layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Project Card */
+/* Project Card - Classic Professional Style */
+.project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    /* Ensure full height in grid */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Element (Background Image) */
+.project-image {
+    width: 100%;
+    height: 250px;
+    /* Fixed height */
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+    /* Zoom effect on hover */
+}
+
+/* Loading Skeleton */
+.image-skeleton {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+/* Removed Bottom Gradient */
+.project-card::before {
+    display: none;
+}
+
+/* Text Content */
+.project-content {
+    position: relative;
+    padding: 1.5rem 2rem;
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* Align text to left */
+    z-index: 2;
+}
+
+/* Category Tag */
+.project-category {
+    display: inline-block;
+    background-color: #f0f7ff;
+    color: #0056b3;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    backdrop-filter: none;
+    text-shadow: none;
+}
+
+/* Title */
+.project-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #112235;
+    text-shadow: none;
+}
+
+/* Description */
+.project-description {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    text-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        min-height: 360px;
+    }
+
+    .projects-title {
+        font-size: 2rem;
+    }
+}

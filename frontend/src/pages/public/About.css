@@ -1,0 +1,239 @@
+.about-page {
+  background-color: #f6f7fb;
+  color: #1f1f1f;
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* -------------------------------------------------------
+   1. HERO SECTION
+-------------------------------------------------------- */
+
+
+
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+
+
+.section-header p {
+  font-size: 1.05rem;
+  color: #4b5563;
+  max-width: 650px;
+  margin: 0;
+  line-height: 1.8;
+  opacity: 0.9;
+  text-align: center;
+}
+
+
+.story-section {
+  padding: 70px 0;
+  background: #f6f7fb;
+}
+
+.story-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* STORY IMAGE */
+.story-image img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* STORY CONTENT */
+.story-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.story-content p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.achievements-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #444;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.achievements-list svg {
+  color: #d87c00;
+  font-size: 1.2rem;
+}
+
+
+.why-choose-us-section {
+  padding: 70px 0;
+  background: #fff;
+}
+
+.why-choose-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  background: #fff;
+  padding: 45px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.why-choose-us-card {
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  transition: box-shadow 0.3s ease;
+  /* Only transition box-shadow */
+  background: #fff;
+}
+
+.why-choose-us-card:hover {
+  /* transform handled by framer motion */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.why-choose-us-icon {
+  width: 75px;
+  height: 75px;
+  background: #fff5e8;
+  color: #d87c00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+}
+
+.why-choose-us-card h3 {
+  font-size: 1.2rem;
+  color: #112235;
+  margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 8px;
+  display: inline-block;
+}
+
+.why-choose-us-card h3::after {
+  content: "";
+  width: 45px;
+  height: 3px;
+  background: #d87c00;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+}
+
+.why-choose-us-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+
+
+
+
+.cta-section {
+  background-color: #112235;
+  padding: 70px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.cta-container p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #d87c00;
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 300ms ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #b86b00;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(216, 124, 0, 0.3);
+}
+
+
+@media (max-width: 992px) {
+  .story-container {
+    grid-template-columns: 1fr;
+  }
+
+
+
+  .why-choose-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 80px 20px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+
+}
+
+@media (max-width: 576px) {
+  .why-choose-us-grid {
+    grid-template-columns: 1fr;
+  }
+}

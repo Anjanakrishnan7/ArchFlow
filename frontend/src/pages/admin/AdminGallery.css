@@ -1,0 +1,189 @@
+.admin-gallery-page {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.filter-btn {
+    padding: 8px 16px;
+    border-radius: var(--radius-full, 9999px);
+    border: 1px solid var(--neutral-200, #e5e7eb);
+    background: white;
+    color: var(--neutral-600, #4b5563);
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.filter-btn:hover {
+    background: var(--neutral-50, #f9fafb);
+    border-color: var(--neutral-300, #d1d5db);
+}
+
+.filter-btn.active {
+    background: var(--primary-50, #eff6ff);
+    border-color: var(--primary-500, #3b82f6);
+    color: var(--primary-600, #2563eb);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.admin-card {
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--neutral-200, #e5e7eb);
+    box-shadow: var(--shadow-sm, 0 1px 2px rgba(0, 0, 0, 0.05));
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.2s;
+}
+
+.admin-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md, 0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.gallery-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.profile-image-container {
+    margin-bottom: 16px;
+}
+
+.profile-placeholder {
+    background-color: var(--neutral-100, #f3f4f6);
+    border: 4px solid white;
+    box-shadow: 0 0 0 1px var(--neutral-200, #e5e7eb);
+}
+
+.admin-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--neutral-900, #111827);
+    margin: 0 0 4px 0;
+}
+
+.admin-role {
+    font-size: 14px;
+    color: var(--neutral-500, #6b7280);
+    margin-bottom: 12px;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-active {
+    background-color: var(--success-100, #d1fae5);
+    color: var(--success-dark, #065f46);
+}
+
+.status-declined {
+    background-color: var(--neutral-100, #f3f4f6);
+    color: var(--neutral-600, #4b5563);
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding: 16px;
+    background-color: var(--neutral-50, #f9fafb);
+    border-radius: var(--radius-md, 8px);
+    border-top: 1px solid var(--neutral-100, #f3f4f6);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--neutral-600, #4b5563);
+    font-size: 14px;
+}
+
+.info-icon {
+    color: var(--neutral-400, #9ca3af);
+    font-size: 16px;
+}
+
+.card-actions {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--neutral-100, #f3f4f6);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: var(--radius-lg, 12px);
+    border: 1px solid var(--neutral-200, #e5e7eb);
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--neutral-900, #111827);
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    color: var(--neutral-500, #6b7280);
+}
+
+/* Button variants if not already global */
+.btn-full-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-secondary {
+    background-color: white;
+    border: 1px solid var(--neutral-300, #d1d5db);
+    color: var(--neutral-700, #374151);
+}
+
+.btn-secondary:hover {
+    background-color: var(--neutral-50, #f9fafb);
+    border-color: var(--neutral-400, #9ca3af);
+}
+
+.btn-danger-solid {
+    background-color: var(--error, #ef4444);
+    color: white;
+    border: none;
+}
+
+.btn-danger-solid:hover {
+    background-color: var(--error-dark, #991b1b);
+}

@@ -1,0 +1,160 @@
+/* ==============================
+   NAVBAR MAIN CONTAINER
+============================== */
+.navbar {
+  width: 100%;
+  background-color: #0a1a2f; /* Dark Navy Blue */
+
+  padding: 12px 40px;    /* slightly smaller so it sits tighter on top */
+  margin: 0 !important;  /* REMOVE ANY GAP ABOVE NAV */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  position: sticky;
+  top: 0;
+  left: 0;
+
+  z-index: 100;
+  box-sizing: border-box;  /* ensures full width */
+}
+
+/* ==============================
+   LOGO
+============================== */
+.navbar-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #d87c00;
+  text-decoration: none;
+}
+.navbar-logo:hover {
+  text-decoration: none;
+  color: #b86b00;
+}
+
+
+
+
+
+
+/* ==============================
+   NAV LINKS WRAPPER
+============================== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+
+
+/* ==============================
+   EACH NAV LINK
+============================== */
+.nav-link {
+  color: white;
+  padding: 10px 16px;
+
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition: 0.3s ease;
+  text-decoration: none !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* REMOVE UNDERLINE IN ALL STATES */
+.btn-auth,
+.btn-auth:visited,
+.btn-auth:hover,
+.btn-auth:active,
+.btn-auth:focus,
+.btn-auth-secondary,
+.btn-auth-secondary:visited,
+.btn-auth-secondary:hover,
+.btn-auth-secondary:active,
+.btn-auth-secondary:focus {
+  text-decoration: none !important;
+}
+
+
+
+/* ==============================
+   HOVER STATE
+============================== */
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #d87c00; /* Orange */
+}
+
+
+
+/* ==============================
+   ACTIVE ROUTE
+============================== */
+.nav-link.active {
+  background-color: rgba(255,255,255,0.18);
+  color: #d87c00;
+}
+
+
+
+/* ==============================
+   LOGIN / LOGOUT BUTTON (RIGHT)
+============================== */
+.btn-auth {
+  background-color: #d87c00;
+  color: #0a1a2f;
+
+  padding: 10px 22px;
+  border-radius: 25px;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+.btn-auth:hover {
+  background-color: #b86b00;
+}
+
+/* ==============================
+   REGISTER BUTTON (SECONDARY)
+============================== */
+.btn-auth-secondary {
+  background-color: transparent;
+  color: #d87c00;
+
+  padding: 10px 22px;
+  border-radius: 25px;
+
+  font-weight: 600;
+  font-size: 1rem;
+
+  border: 1px solid #d87c00;
+  cursor: pointer;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+/* HOVER */
+.btn-auth-secondary:hover {
+  background-color: rgba(216, 124, 0, 0.15);
+  color: #d87c00;
+}
+
+.nav-actions { display: flex; gap: 15px; align-items: center; }

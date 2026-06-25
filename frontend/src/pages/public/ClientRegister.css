@@ -1,0 +1,21 @@
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 350px;
+  margin-top: 20px;
+}
+
+.register-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.register-form button {
+  padding: 10px;
+  background: #1e293b;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}

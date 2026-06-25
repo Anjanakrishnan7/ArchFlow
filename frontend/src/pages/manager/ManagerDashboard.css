@@ -1,0 +1,447 @@
+/* Manager Dashboard Premium Styles */
+:root {
+    --bg: #f4f6f9;
+    --card: #ffffff;
+    --muted: #7b8794;
+    --accent: #2b8cff;
+    --accent-2: #0ea5a3;
+    --shadow-soft: 0 6px 18px rgba(35, 47, 63, 0.08);
+    --border-subtle: rgba(36, 49, 58, 0.04);
+    --radius: 10px;
+    --font-main: 'Inter', sans-serif;
+}
+
+.dashboard-container {
+    padding: 24px;
+    background-color: var(--bg);
+    min-height: 100vh;
+    font-family: var(--font-main);
+}
+
+/* Header */
+.dashboard-header {
+    margin-bottom: 32px;
+}
+
+.dashboard-title-role {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.dashboard-title-role .manager-role-accent {
+    color: #1e3a8a !important;
+    /* Dark Blue for Manager */
+}
+
+.dashboard-title-role .dashboard-text {
+    color: #1a1a1a !important;
+    /* Black for Dashboard text */
+}
+
+/* Grid Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+/* Common Card Style */
+.dashboard-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 24px;
+    border: 1px solid var(--border-subtle);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(35, 47, 63, 0.12);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0;
+}
+
+/* Top Metrics Bar */
+.metrics-row {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.metric-card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent), var(--accent-2));
+    opacity: 0.8;
+}
+
+.metric-info h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0;
+}
+
+.metric-info p {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: rgba(43, 140, 255, 0.08);
+    color: var(--accent);
+}
+
+/* Lower Charts & Summary Section */
+.progress-summary-card {
+    grid-column: span 7;
+}
+
+.quick-summary-card {
+    grid-column: span 5;
+    background: #ffffff;
+    padding: 1.8rem;
+    border-radius: 14px;
+    border: 1px solid #ececec;
+    box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.04);
+}
+
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.3px;
+}
+
+.status-summary-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.2rem;
+    border-radius: 40px;
+    border: 1px solid #e6e6e6;
+    background: #fafafa;
+    transition: all 0.2s ease;
+}
+
+.status-item:hover {
+    transform: translateX(3px);
+    background: #f1f1f1;
+}
+
+.status-label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+}
+
+.status-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.status-count {
+    font-weight: 700;
+    color: #222;
+}
+
+/* STATUS COLOR THEMES */
+.status-ongoing {
+    background-color: #eff6ff;
+    border-color: #cfe0ff;
+}
+
+.status-ongoing .status-dot {
+    background-color: #4f46e5;
+}
+
+.status-ongoing .status-label {
+    color: #1e40af;
+}
+
+.status-pending {
+    background-color: #f3f4f6;
+    border-color: #e5e7eb;
+}
+
+.status-pending .status-dot {
+    background-color: #6b7280;
+}
+
+.status-pending .status-label {
+    color: #374151;
+}
+
+.status-completed {
+    background-color: #e9fdf0;
+    border-color: #c7f6d9;
+}
+
+.status-completed .status-dot {
+    background-color: #10b981;
+}
+
+.status-completed .status-label {
+    color: #0f6b32;
+}
+
+.status-onhold {
+    background-color: #fef2f2;
+    border-color: #fee2e2;
+}
+
+.status-onhold .status-dot {
+    background-color: #ef4444;
+}
+
+.status-onhold .status-label {
+    color: #991b1b;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 250px;
+    width: 250px;
+}
+
+.chart-center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-center-text .total-value {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a202c;
+    line-height: 1;
+}
+
+.chart-center-text .total-label {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+    width: 100%;
+}
+
+
+
+
+/* Recent Activity */
+.activity-card {
+    grid-column: span 4;
+}
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activity-item {
+    display: flex;
+    gap: 16px;
+    position: relative;
+}
+
+.activity-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 32px;
+    bottom: -20px;
+    width: 1px;
+    background: var(--border-subtle);
+}
+
+.activity-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #edf2f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #718096;
+    z-index: 1;
+}
+
+.activity-content h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d3748;
+    margin: 0 0 4px 0;
+}
+
+.activity-content p {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.activity-time {
+    font-size: 11px;
+    color: #a0aec0;
+    margin-top: 4px;
+    display: block;
+}
+
+/* Quick Links */
+.quick-links-card {
+    grid-column: span 4;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.quick-link-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px dashed #cbd5e0;
+    border-radius: var(--radius);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--muted);
+}
+
+.quick-link-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(43, 140, 255, 0.04);
+    transform: translateY(-2px);
+}
+
+.quick-link-icon {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.quick-link-text {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+
+    .progress-summary-card,
+    .deadlines-card,
+    .activity-card,
+    .quick-links-card {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .metrics-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.btn-link {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.btn-link:hover {
+    opacity: 0.7;
+}
+
+.loading-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-size: 16px;
+    color: var(--muted);
+}

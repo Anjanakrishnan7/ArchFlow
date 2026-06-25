@@ -1,0 +1,226 @@
+/* Manager Projects - Card Layout */
+.projects-page-container {
+    padding: 24px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.projects-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2b8cff 0%, #0ea5a3 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(43, 140, 255, 0.25);
+}
+
+.header-text h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a202c;
+    margin: 0 0 4px 0;
+}
+
+.header-text p {
+    font-size: 13px;
+    color: #7b8794;
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.search-projects {
+    padding: 10px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 280px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-projects:focus {
+    border-color: #2b8cff;
+}
+
+.btn-new-project {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #2b8cff 0%, #0ea5a3 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.project-status-badge {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.project-status-badge.in-progress,
+.project-status-badge.ongoing {
+    background: #e8f4fd;
+    color: #1a73e8;
+}
+
+.project-status-badge.completed {
+    background: #e6f4ea;
+    color: #1e8e3e;
+}
+
+.project-status-badge.pending {
+    background: #fef7e0;
+    color: #ea8600;
+}
+
+.project-status-badge.delayed {
+    background: #fce8e6;
+    color: #d93025;
+}
+
+/* Progress Section */
+.project-progress-section {
+    margin-top: 14px;
+    margin-bottom: 14px;
+}
+
+.progress-label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.progress-label {
+    font-size: 11px;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+.progress-percentage {
+    font-size: 12px;
+    font-weight: 600;
+    color: #202124;
+}
+
+.progress-bar-container {
+    height: 6px;
+    background: #e8eaed;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #00bcd4;
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+/* Project Footer */
+.project-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid #e8eaed;
+}
+
+.project-dates {
+    font-size: 11px;
+    color: #5f6368;
+}
+
+.project-dates .arrow {
+    margin: 0 4px;
+    color: #5f6368;
+}
+
+.project-team {
+    font-size: 11px;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+.project-team span {
+    font-weight: 600;
+    color: #202124;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #7b8794;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    color: #2d3748;
+    margin-bottom: 8px;
+}
+
+.empty-state p {
+    font-size: 14px;
+    color: #7b8794;
+}
+
+/* Loading */
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    color: #7b8794;
+    font-size: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .header-actions {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .search-projects {
+        width: 100%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,22 @@
+/* Reset and Base Styles */
+@import './styles/variables.css';
+@import './styles/reset.css';
+/* Keeping original reset if it exists, otherwise global.css handles it */
+@import './styles/global.css';
+@import './styles/utilities.css';
+
+/* Component Styles */
+@import './styles/buttons.css';
+@import './styles/cards.css';
+@import './styles/badges.css';
+@import './styles/forms.css';
+@import './styles/grid.css';
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 
+   Legacy styles should be removed as they are replaced by the shared files.
+   Any remaining global styles that don't fit into the modules can go here 
+   or be moved to global.css.
+*/

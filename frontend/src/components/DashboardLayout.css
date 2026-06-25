@@ -1,0 +1,241 @@
+/* =====================================================
+   GLOBAL THEME COLORS
+===================================================== */
+:root {
+  --sidebar-bg: #112235;
+  --sidebar-text: #a9c1de;
+  --sidebar-title-text: #ffffff;
+  --sidebar-hover-bg: #162b45;
+  --sidebar-active-bg: #1f3a5a;
+  --primary-color: #d87c00;
+  --main-content-bg: #f7f9fc;
+}
+
+/* =====================================================
+   DASHBOARD LAYOUT
+===================================================== */
+.dashboard-layout {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  /* Adjust if navbar height changes */
+  background-color: var(--main-content-bg);
+}
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+
+  box-shadow: 5px 0 15px -5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--sidebar-title-text);
+  text-align: center;
+
+  margin: 0 0 2.5rem 0;
+  padding: 2rem 1.5rem 0 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+/* =====================================================
+   SIDEBAR PROFILE HEADER
+===================================================== */
+.sidebar-profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+}
+
+.profile-avatar-container {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 3px solid #1e293b;
+  /* Dark Blue border */
+  background-color: var(--sidebar-hover-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.sidebar-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar-avatar-placeholder {
+  font-size: 2rem;
+  color: var(--sidebar-text);
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.25rem;
+}
+
+.profile-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--sidebar-title-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+}
+
+.profile-role {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  background-color: rgba(216, 124, 0, 0.1);
+  padding: 2px 8px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================
+   LINKS — Default state
+============================================ */
+.sidebar-links a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem 1.75rem;
+
+  font-weight: 500;
+  font-size: 1rem;
+
+  color: var(--sidebar-text);
+  border-left: 4px solid transparent;
+
+  /* Prevent underline in all states */
+  text-decoration: none !important;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-left-color 0.25s ease;
+}
+
+/* ============================================
+   Prevent underline in ALL states (important)
+============================================ */
+.sidebar-links a,
+.sidebar-links a:hover,
+.sidebar-links a:active,
+.sidebar-links a.active,
+.sidebar-links a:focus,
+.sidebar-links a:visited {
+  text-decoration: none !important;
+  outline: none !important;
+}
+
+/* ============================================
+   HOVER
+============================================ */
+.sidebar-links a:hover {
+  background-color: var(--sidebar-hover-bg);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+}
+
+/* ============================================
+   ACTIVE / SELECTED
+============================================ */
+.sidebar-links a.active {
+  background-color: var(--sidebar-active-bg);
+  color: var(--primary-color);
+  border-left-color: var(--primary-color);
+}
+
+/* Icon styling */
+.sidebar-links a .icon {
+  font-size: 1.2rem;
+  width: 20px;
+  text-align: center;
+  transition: color 0.25s ease;
+}
+
+.sidebar-links a.active .icon {
+  color: var(--primary-color);
+}
+
+/* =====================================================
+   MAIN CONTENT AREA
+===================================================== */
+.main-content {
+  margin-left: 260px;
+  flex-grow: 1;
+  padding: 2.5rem;
+  min-height: 100vh;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+    /* For mobile you can replace with collapsible later */
+  }
+}
+
+/* ============================================
+   UTILITIES
+============================================ */
+.sidebar-link-spacer {
+  margin-top: 2rem;
+  /* Add clear spacing above this item */
+}
+
+/* Logout specific styling */
+.sidebar-links a.logout-link {
+  color: #b91c1c !important;
+  /* Darker Red color */
+}
+
+.sidebar-links a.logout-link:hover {
+  background-color: rgba(185, 28, 28, 0.1);
+  color: #991b1b !important;
+  border-left-color: #991b1b;
+}
+
+.sidebar-links a.logout-link .icon {
+  color: inherit;
+}

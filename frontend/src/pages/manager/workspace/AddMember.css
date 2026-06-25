@@ -1,0 +1,334 @@
+/* Classic Enterprise Styling */
+.add-member-page {
+    background-color: #f4f5f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.add-member-header {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-bottom: 1px solid #dfe1e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.header-left h1 {
+    font-size: 1.5rem;
+    color: #172b4d;
+    /* Dark navy for text */
+    margin: 5px 0 2px 0;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.header-left p {
+    color: #5e6c84;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #42526e;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 0;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.back-button:hover {
+    color: #0052cc;
+    text-decoration: underline;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.selection-count {
+    font-weight: 600;
+    color: #0052cc;
+    background-color: #deebff;
+    padding: 6px 16px;
+    border-radius: 3px;
+    /* Square edges for classic look */
+    font-size: 0.85rem;
+    border: 1px solid #b3d4ff;
+}
+
+.add-selected-btn {
+    background-color: #0052cc;
+    /* Classic enterprise blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    /* Square edges */
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 0.9rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s;
+}
+
+.add-selected-btn:hover:not(:disabled) {
+    background-color: #0747a6;
+}
+
+.add-selected-btn:disabled {
+    background-color: #ebecf0;
+    color: #a5adba;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.add-member-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    width: 95%;
+    background: white;
+    border: 1px solid #dfe1e6;
+    border-radius: 4px;
+    /* Slight radius */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-bar {
+    padding: 16px 24px;
+    border-bottom: 1px solid #dfe1e6;
+    background-color: #fafbfc;
+}
+
+.search-input-wrapper {
+    position: relative;
+    max-width: 400px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6b778c;
+    font-size: 0.9rem;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    border: 2px solid #dfe1e6;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    outline: none;
+    color: #172b4d;
+    background-color: #ffffff;
+    transition: border-color 0.2s;
+}
+
+.search-input-wrapper input:focus {
+    border-color: #4c9aff;
+    background-color: #ffffff;
+}
+
+.staff-list-container {
+    overflow-x: auto;
+}
+
+.staff-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.staff-table th {
+    text-align: left;
+    padding: 12px 20px;
+    background-color: #f4f5f7;
+    color: #5e6c84;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 2px solid #dfe1e6;
+}
+
+.staff-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #ebecf0;
+    color: #172b4d;
+    vertical-align: middle;
+    font-size: 0.95rem;
+}
+
+.staff-table tr {
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.staff-table tr:hover:not(.row-disabled) {
+    background-color: #fafbfc;
+}
+
+.staff-table tr.row-selected {
+    background-color: #e6fcff;
+    /* Very subtle blue highlight */
+}
+
+.staff-table tr.row-disabled {
+    background-color: #f4f5f7;
+    color: #a5adba;
+    cursor: default;
+}
+
+.checkbox-cell {
+    text-align: center;
+    width: 60px;
+}
+
+/* Custom Checkbox mimicking native but cleaner */
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #0052cc;
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: white;
+    margin: 0 auto;
+}
+
+.custom-checkbox.checked {
+    background-color: #0052cc;
+    border-color: #0052cc;
+}
+
+.row-selected .custom-checkbox {
+    background-color: #0052cc;
+    border-color: #0052cc;
+}
+
+.staff-table tr:not(.row-selected) .custom-checkbox:not(.checked) {
+    border-color: #dfe1e6;
+    /* Grey when unchecked */
+}
+
+.staff-table tr:hover .custom-checkbox {
+    border-color: #0052cc;
+}
+
+.assigned-icon {
+    color: #36b37e;
+    /* Green success color */
+    font-size: 1.1rem;
+}
+
+.staff-info-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.staff-avatar-placeholder {
+    width: 36px;
+    height: 36px;
+    background-color: #ebecf0;
+    color: #5e6c84;
+    border-radius: 4px;
+    /* Square avatar for enterprise logic */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.staff-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.staff-name {
+    font-weight: 600;
+    color: #172b4d;
+    font-size: 0.95rem;
+}
+
+.staff-role {
+    font-size: 0.8rem;
+    color: #6b778c;
+    margin-top: 1px;
+}
+
+.qualification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #fff;
+    border: 1px solid #dfe1e6;
+    padding: 4px 8px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    color: #42526e;
+    font-weight: 500;
+}
+
+.contact-details .email {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #42526e;
+}
+
+.contact-details .phone {
+    font-size: 0.85rem;
+    color: #6b778c;
+}
+
+.status-badge {
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-block;
+}
+
+.status-badge.active {
+    background-color: #e3fcef;
+    color: #006644;
+}
+
+.status-badge.inactive {
+    background-color: #dfe1e6;
+    color: #42526e;
+}
+
+.no-results {
+    text-align: center;
+    padding: 60px;
+    color: #6b778c;
+    font-size: 1.1rem;
+    background-color: white;
+}
