@@ -23,12 +23,17 @@ const ClientGallery = () => {
                 setClients(data);
             } else if (data && Array.isArray(data.users)) {
                 setClients(data.users);
+            } else if (!data || (data.success && !data.users)) {
+                setClients([]);
             } else {
                 console.error("Unexpected data format:", data);
                 setClients([]);
             }
         } catch (error) {
-            showToast('Failed to load clients', 'error');
+            const isNetworkError = error.response || error.request || error.message === 'Network Error';
+            if (isNetworkError) {
+                showToast('Failed to load clients', 'error');
+            }
             console.error('Error loading clients:', error);
             setClients([]);
         } finally {

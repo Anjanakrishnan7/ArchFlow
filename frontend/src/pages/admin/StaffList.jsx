@@ -24,13 +24,17 @@ const StaffGallery = () => {
             } else if (data && Array.isArray(data.users)) {
                 // Fallback
                 setStaff(data.users);
+            } else if (!data || (data.success && !data.users)) {
+                setStaff([]);
             } else {
                 console.error("Unexpected data format:", data);
                 setStaff([]);
-                // Don't toast here to avoid spamming if it's just empty
             }
         } catch (error) {
-            showToast('Failed to load staff', 'error');
+            const isNetworkError = error.response || error.request || error.message === 'Network Error';
+            if (isNetworkError) {
+                showToast('Failed to load staff', 'error');
+            }
             console.error('Error loading staff:', error);
             setStaff([]);
         } finally {

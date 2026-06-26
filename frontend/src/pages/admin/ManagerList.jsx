@@ -21,16 +21,20 @@ const ManagerList = () => {
 
             if (Array.isArray(data)) {
                 setManagers(data);
-            } else if (data.success && Array.isArray(data.users)) {
+            } else if (data && Array.isArray(data.users)) {
                 // Fallback for previous response structure
                 setManagers(data.users);
+            } else if (!data || (data.success && !data.users)) {
+                setManagers([]);
             } else {
                 console.error("Unexpected data format:", data);
                 setManagers([]);
-                showToast('Received invalid data from server', 'error');
             }
         } catch (error) {
-            showToast('Failed to load managers', 'error');
+            const isNetworkError = error.response || error.request || error.message === 'Network Error';
+            if (isNetworkError) {
+                showToast('Failed to load managers', 'error');
+            }
             console.error('Error loading managers:', error);
             setManagers([]);
         } finally {
