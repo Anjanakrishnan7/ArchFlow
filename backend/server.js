@@ -35,6 +35,8 @@ const chatRoutes = require('./routes/chat');
 // JWT_SECRET checked in validateEnv.js
 
 const app = express();
+app.set('trust proxy', 1);
+
 
 // --- SECURITY MIDDLEWARES ---
 app.use(helmet({
@@ -107,12 +109,7 @@ app.use('/api/chat', chatRoutes);
 const errorHandler = require('./middleware/error');
 app.use(errorHandler);
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../../frontend/dist')));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../frontend/dist', 'index.html'));
-  });
-}
+
 
 const PORT = process.env.PORT || 5000;
 const server = app.listen(PORT, () => console.log(`Server running on ${PORT}`));
