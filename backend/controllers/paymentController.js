@@ -3,6 +3,8 @@ const PaymentTransaction = require('../models/PaymentTransaction');
 const Project = require('../models/Project');
 const User = require('../models/User');
 const Receipt = require('../models/Receipt');
+const mongoose = require('mongoose');
+
 const path = require('path');
 const fs = require('fs');
 const { generateReceipt } = require('../utils/receiptGenerator');
@@ -111,11 +113,13 @@ exports.submitPayment = async (req, res) => {
             return res.status(400).json({ success: false, message: "Payment amount must be a positive number" });
         }
 
+        const cleanRequestId = (requestId && mongoose.Types.ObjectId.isValid(requestId)) ? requestId : undefined;
+
         // Create transaction
         const transaction = await PaymentTransaction.create({
             projectId,
             clientId: req.user.id,
-            requestId,
+            requestId: cleanRequestId,
             amount,
             purpose,
             transactionId,
@@ -126,8 +130,8 @@ exports.submitPayment = async (req, res) => {
         });
 
         // Update Request status if requestId exists
-        if (requestId) {
-            await PaymentRequest.findByIdAndUpdate(requestId, { status: "Paid" });
+        if (cleanRequestId) {
+            await PaymentRequest.findByIdAndUpdate(cleanRequestId, { status: "Paid" });
         }
 
         res.status(201).json({
@@ -159,7 +163,7 @@ exports.verifyPayment = async (req, res) => {
         // Realistic Receipt Generation
         try {
             const filename = await generateReceipt(transaction);
-            const receiptUrl = `/uploads/payment-proofs/${filename}`;
+            const receiptUrl = `/uploads/documents/${filename}`;
             transaction.receiptUrl = receiptUrl;
 
             // Save to Receipt table
@@ -211,7 +215,7 @@ exports.getReceipt = async (req, res) => {
             try {
                 console.log(`[Receipt] Generating missing receipt for transaction ${id} (Status: ${transaction.status})`);
                 const filename = await generateReceipt(transaction);
-                const receiptUrl = `/uploads/payment-proofs/${filename}`;
+                const receiptUrl = `/uploads/documents/${filename}`;
                 transaction.receiptUrl = receiptUrl;
 
                 // Save to Receipt table

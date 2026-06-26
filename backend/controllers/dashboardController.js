@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Project = require('../models/Project');
 
 // Admin Dashboard
 exports.getAdminDashboard = async (req, res) => {
@@ -6,7 +7,7 @@ exports.getAdminDashboard = async (req, res) => {
     const totalClients = await User.countDocuments({ role: 'client' });
     const pendingApprovals = await User.countDocuments({ status: 'pending' });
     const totalStaff = await User.countDocuments({ role: 'staff' });
-    const totalProjects = 0; // Project model removed
+    const totalProjects = await Project.countDocuments();
 
     res.json({
       stats: {

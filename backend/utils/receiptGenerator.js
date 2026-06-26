@@ -24,10 +24,10 @@ const generateReceipt = async (transaction) => {
             // Sanitize transactionId for filename
             const safeTxId = (transaction.transactionId || 'bank_transfer').replace(/[^a-z0-9]/gi, '_');
             const filename = `receipt-${safeTxId}-${transaction._id.toString().slice(-6)}.pdf`;
-            const filePath = path.join(__dirname, '../uploads/payment-proofs', filename);
+            const filePath = path.join(__dirname, '../uploads/documents', filename);
 
             // Ensure directory exists
-            const dir = path.join(__dirname, '../uploads/payment-proofs');
+            const dir = path.join(__dirname, '../uploads/documents');
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
