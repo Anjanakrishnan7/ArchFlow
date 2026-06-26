@@ -62,14 +62,14 @@ const storage = multer.diskStorage({
 // File filter
 const fileFilter = (req, file, cb) => {
   // STRICTER VALIDATION: Whitelist extensions and utilize mimetype check
-  const allowedExtensions = /jpeg|jpg|png|gif|pdf|doc|docx|xls|xlsx|txt/;
+  const allowedExtensions = /jpeg|jpg|png|gif|webp|pdf|doc|docx|xls|xlsx|txt/;
   const extname = allowedExtensions.test(path.extname(file.originalname).toLowerCase());
 
   // Basic mimetype check (Note: client can spoof this, but it's a first line of defense)
-  // For true security, one would inspect file magic numbers (e.g. using 'file-type' package)
   const allowedMimes = [
-    'image/jpeg', 'image/png', 'image/gif',
-    'application/pdf',
+    'image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp',
+    'image/pjpeg', 'image/x-png', 'image/svg+xml', 'image/bmp', 'image/tiff',
+    'application/pdf', 'application/x-pdf', 'application/acrobat', 'applications/vnd.pdf', 'text/pdf', 'text/x-pdf',
     'application/msword',
     'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
     'application/vnd.ms-excel',
